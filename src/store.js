@@ -8,6 +8,8 @@ export default new Vuex.Store({
   state: {
     items: {
       todo: [],
+      inProgress: [],
+      done: [],
     },
     nextId: 1,
   },
