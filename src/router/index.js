@@ -11,6 +11,10 @@ export default new Router({
       component: Backlog,
     },
     {
+      path: '/board',
+      component: KanbanBoard,
+    },
+    {
       path: '*',
       redirect: '/backlog',
     },
