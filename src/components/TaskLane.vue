@@ -35,3 +35,8 @@ export default {
 };
 </script>
 
+<style>
+  .card-body > * {
+    min-height: 50px;
+  }
+</style>
