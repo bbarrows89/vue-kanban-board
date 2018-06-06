@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import TaskLaneItem from './TaskLaneItem';
+
 export default {
   name: 'TaskLane',
   props: ['items', 'title', 'id'],
