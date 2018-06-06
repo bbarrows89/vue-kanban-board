@@ -2,9 +2,11 @@
   <div class="card">
     <h3 class="card-header">{{title}}</h3>
     <div class="card-body">
-      <div v-for="item in items" :key="item.id">
-        <item :item="item"></item>
-      </div>
+      <draggable v-model="draggables" :options="{ group: 'default' }">
+        <div v-for="item in items" :key="item.id">
+          <item :item="item"></item>
+        </div>
+      </draggable>
     </div>
     <div class="card-footer text-muted">
       {{itemCount}}
@@ -14,12 +16,14 @@
 
 <script>
 import TaskLaneItem from './TaskLaneItem';
+import Draggable from 'vuedraggable';
 
 export default {
   name: 'TaskLane',
   props: ['items', 'title', 'id'],
   components: {
     item: TaskLaneItem,
+    draggable: Draggable,
   },
   computed: {
     itemCount() {
