@@ -31,6 +31,17 @@ export default {
       if (this.items.length === 1) return '1 task';
       return `${this.items.length} tasks`;
     },
+    draggables: {
+      get() {
+        return this.items;
+      },
+      set(items) {
+        this.$store.commit('updateItems', {
+          items,
+          id: this.id,
+        });
+      },
+    },
   },
 };
 </script>
