@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import TaskLaneItem from './TaskLaneItem';
 import Draggable from 'vuedraggable';
+import TaskLaneItem from './TaskLaneItem';
 
 export default {
   name: 'TaskLane',
