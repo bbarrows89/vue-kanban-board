@@ -15,10 +15,38 @@
 import { mapState } from 'vuex';
 import NewItemForm from './NewItemForm';
 
+const badgeDetail = {
+  todo: {
+    text: 'todo',
+    class: 'badge badge-light',
+  },
+
+  inProgress: {
+    text: 'in progress',
+    class: 'badge badge-info',
+  },
+
+  done: {
+    text: 'done',
+    class: 'badge badge-success',
+  },
+};
+
 export default {
   name: 'Backlog',
   components: {
     'new-item': NewItemForm,
+  },
+  methods: {
+    itemLane(item) {
+      if (this.$store.state.items.todo.includes(item)) {
+        return 'todo';
+      } else if (this.$store.state.items.inProgress.includes(item)) {
+        return 'inProgress';
+      }
+
+      return 'done';
+    },
   },
   computed: mapState({
     items: s => [...s.items.todo, ...s.items.inProgress, ...s.items.done],
