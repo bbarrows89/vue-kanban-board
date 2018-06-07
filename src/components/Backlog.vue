@@ -47,6 +47,14 @@ export default {
 
       return 'done';
     },
+    badgeText(item) {
+      const lane = this.itemLane(item);
+      return badgeDetail[lane].text;
+    },
+    badgeClass(item) {
+      const lane = this.itemLane(item);
+      return badgeDetail[lane].class;
+    },
   },
   computed: mapState({
     items: s => [...s.items.todo, ...s.items.inProgress, ...s.items.done],
