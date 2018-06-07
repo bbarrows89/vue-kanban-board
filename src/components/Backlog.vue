@@ -21,7 +21,7 @@ export default {
     'new-item': NewItemForm,
   },
   computed: mapState({
-    items: s => s.items.todo,
+    items: s => [...s.items.todo, ...s.items.inProgress, ...s.items.done]
   }),
 };
 </script>
